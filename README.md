@@ -35,21 +35,26 @@ To run the automated tests for this system, execute the following command:
     mvn test
 ```
 ### Test visualization
-Runing tests
+Runing tests:
+
 ![](/img/tests.png)
 
 Get:
+
 ![](/img/get.png)
 
 Get Code:
+
 ![](/img/getCode.png)
 
 Post:
+
 ![](/img/post.png)
 
 ![](/img/postev.png)
 
 Post Code:
+
 ![](/img/postCode.png)
 
 
