@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FilmFinder</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <script src="js/FilmFinder.js"></script>
+        <div class="container">
+            <div class="form-container">
+                <h1>FilmFinder</h1>
+                
+                <form action="/hello">
+                    
+                    <label for="title">Title(*):</label><br>
+                    <input type="text" id="title" name="title" required><br><br>
+                    <label for="type">Type:</label><br>
+                    <select id="type" name="type">
+                        <option value="">-- Select --</option>
+                        <option value="movie">Movie</option>
+                        <option value="series">Series</option>
+                        <option value="episode">Episode</option>
+                    </select><br><br>
+                    <label for="year">Year:</label><br>
+                    <input type="text" id="year" name="year"><br><br>
+                    <label for="plot">Plot:</label><br>
+                    <select id="plot" name="plot">
+                        <option value="">-- Select --</option>
+                        <option value="short">Short</option>
+                        <option value="full">Full</option>
+                    </select><br><br>
+                    <input type="button" value="Submit" onclick="loadGetMsg()">
+                </form>
+            </div>
+            <div class="movie-details" id="movieDetails">
+                <div class="movie-info">
+                <h1>Welcome to FilmFinder!</h1>
+                <form id="nameForm" action="localhost:35000/savename" method="post">
+                    <label for="username">Ingrese su nombre:</label><br>
+                    <input type="text" id="username" name="username" required><br><br>
+                    <input type="submit" value="Enviar">
+                </form>
+                <div id="usernameDisplay"></div>
+                <p>Please enter the details of the movie you are looking for.</p>
+                <p>FilmFinder uses the OMDb API (The Open Movie Database), which is a RESTful web service to obtain movie information. The content and images on the site are provided by the OMDb API.<br> <br> Developed by Jaider Gonzalez</p> 
+                <img src="img/OMDB-API.png" alt="imagen"/>
+            </div>
+                <div class="poster-container">
+                    <img src="" alt="Poster" id="posterImg">
+                    <p id="noPoster" style="display: none;"></p>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById('nameForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var username = document.getElementById('username').value;
+            var usernameDisplay = document.getElementById('usernameDisplay');
+            usernameDisplay.innerHTML = '<h2>¡Hola, ' + username + '!</h2>';
+            document.getElementById('formContainer').style.display = 'block';
+        });
+        </script>
+    </body>
+</html>";
